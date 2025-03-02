@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFrame Installation</title>
+  <script src="./script/aframe.min.js"></script>
+</head>
+<body>
+  <!-- A-Frame Scene -->
+  <a-scene shadow="type: pcfsoft">
+    
+    <!-- Better Lighting -->
+    <a-light type="ambient" color="#CCC" intensity="1.5"></a-light>
+    <a-light type="directional" position="0 5 5" intensity="1.5" castShadow="true"></a-light>
+
+    <!-- Ceiling Light Bulbs -->
+    <a-entity position="0 4.8 -3">
+      <a-sphere radius="0.1" color="yellow" emissive="yellow" emissiveIntensity="1"></a-sphere>
+      <a-light type="point" intensity="2" distance="10" color="yellow"></a-light>
+    </a-entity>
+    
+    <a-entity position="0 4.8 3">
+      <a-sphere radius="0.1" color="yellow" emissive="yellow" emissiveIntensity="1"></a-sphere>
+      <a-light type="point" intensity="2" distance="10" color="yellow"></a-light>
+    </a-entity>
+
+    <!-- Room (Walls, Floor, Ceiling) - Changed to Green -->
+    <a-box position="0 2.5 -5" width="10" height="5" depth="0.1" color="#228B22"></a-box> <!-- Back Wall -->
+    <a-box position="0 2.5 5" width="10" height="5" depth="0.1" color="#228B22"></a-box>  <!-- Front Wall -->
+    <a-box position="-5 2.5 0" width="0.1" height="5" depth="10" color="#228B22"></a-box>  <!-- Left Wall -->
+    <a-box position="5 2.5 0" width="0.1" height="5" depth="10" color="#228B22"></a-box>   <!-- Right Wall -->
+    <a-box position="0 5 0" width="10" height="0.1" depth="10" color="#228B22"></a-box>    <!-- Ceiling -->
+
+
+
+
+
+    <a-entity position="-4.5 1 -4.9">
+       <a-cylinder radius="0.2" height="0.5" color="brown"></a-cylinder>
+       <a-sphere position="0 0.5 0" radius="0.3" color="red"></a-sphere>
+       <a-light type="spot" color="pink" intensity="2" position="0 2 0"></a-light>
+     </a-entity>
+ 
+     <a-entity position="4.5 1 -4.9">
+       <a-cylinder radius="0.2" height="0.5" color="brown"></a-cylinder>
+       <a-sphere position="0 0.5 0" radius="0.3" color="red"></a-sphere>
+       <a-light type="spot" color="pink" intensity="2" position="0 2 0"></a-light>
+     </a-entity>
+    <!-- Ground with Image Texture -->
+    <a-plane src="A-FrameResourcesFiles/textures/TexturesCom_FloorsMarble0023_M.jpg" rotation="-90 0 0" width="10" height="10" shadow></a-plane>
+
+    <!-- TABLE -->
+    <a-box position="0 0.5 0" width="2" height="0.1" depth="2" color="#8B4513"></a-box>
+
+    <!-- Table Legs (Brown) -->
+    <a-cylinder position="-1 -0.55 1" radius="0.1" height="2" color="brown"></a-cylinder>
+    <a-cylinder position="1 -0.55 1" radius="0.1" height="2" color="brown"></a-cylinder>
+    <a-cylinder position="-1 -0.55 -1" radius="0.1" height="2" color="brown"></a-cylinder>
+    <a-cylinder position="1 -0.55 -1" radius="0.1" height="2" color="brown"></a-cylinder>
+
+    <!-- TELEVISION (On the Back Wall) -->
+    <a-box position="0 2 -4.9" width="3" height="2" depth="0.05" color="black"></a-box>  <!-- Screen -->
+    <a-box position="0 1 -4.85" width="0.1" height="0.1" depth="0.1" color="red"></a-box> <!-- Power Button -->
+    <a-box position="0 0.4 -4.85" width="2.5" height="0.2" depth="0.2" color="gray"></a-box> <!-- Stand -->
+
+    <!-- CHAIRS (Now 4) -->
+    <a-box position="-1.5 0.25 0.8" width="0.5" height="0.5" depth="0.5" color="#654321"></a-box> <!-- Chair 1 -->
+    <a-box position="1.5 0.25 0.8" width="0.5" height="0.5" depth="0.5" color="#654321"></a-box>  <!-- Chair 2 -->
+    <a-box position="-1.5 0.25 -0.8" width="0.5" height="0.5" depth="0.5" color="#654321"></a-box> <!-- Chair 3 -->
+    <a-box position="1.5 0.25 -0.8" width="0.5" height="0.5" depth="0.5" color="#654321"></a-box>  <!-- Chair 4 -->
+
+    <!-- CUP 1 (With Handle) -->
+    <a-entity position="-0.2 0.6 0">
+      <a-cylinder radius="0.1" height="0.2" color="white" open-ended="true"></a-cylinder>
+      <a-torus position="0 0.05 0.15" radius="0.05" radius-tubular="0.01" color="white"></a-torus>
+    </a-entity>
+
+    <!-- CUP 2 (With Handle) -->
+    <a-entity position="0.2 0.6 0">
+      <a-cylinder radius="0.1" height="0.2" color="white" open-ended="true"></a-cylinder>
+      <a-torus position="0 0.05 0.15" radius="0.05" radius-tubular="0.01" color="white"></a-torus>
+    </a-entity>
+
+    <!-- MILO TIN -->
+    <a-cylinder position="-0.5 0.55 0.3" radius="0.15" height="0.5" color="#006400"></a-cylinder>
+
+    <!-- MILK TIN -->
+    <a-cylinder position="0.5 0.55 0.3" radius="0.15" height="0.5" color="#ADD8E6"></a-cylinder>
+
+    <!-- Ceiling Fan -->
+    <a-entity position="0 4.9 0">
+      <a-cylinder height="0.2" radius="0.03" color="black"></a-cylinder>
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 2000">
+        <a-box position="0 0 -0.4" width="0.1" height="0.05" depth="0.8" color="gray"></a-box>
+        <a-box position="0 0 0.4" width="0.1" height="0.05" depth="0.8" color="gray"></a-box>
+        <a-box position="0.4 0 0" rotation="0 90 0" width="0.1" height="0.05" depth="0.8" color="gray"></a-box>
+        <a-box position="-0.4 0 0" rotation="0 90 0" width="0.1" height="0.05" depth="0.8" color="gray"></a-box>
+      </a-entity>
+    </a-entity>
+
+
+
+  </a-scene>
+</body>
+</html>
